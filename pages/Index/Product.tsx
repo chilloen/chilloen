@@ -56,7 +56,7 @@ const Product = () => {
       <Icons
         initial={'offscreen'}
         whileInView={'onscreen'}
-        transition={{ staggerChildren: 0.5, delayChildren: 1 }}
+        transition={{ staggerChildren: 0.5, delayChildren: 0.7 }}
         viewport={{ once: true, amount: 1 }}
       >
         <IconCard variants={textAnimate}>
