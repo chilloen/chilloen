@@ -11,7 +11,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <Fragment>
       <Head>
-        <title>칠로엔</title>
+        <title>chilloen</title>
         <meta name="description" content="예술에 가치를 더합니다." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="chilloen" />
