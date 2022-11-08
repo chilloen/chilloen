@@ -56,7 +56,7 @@ const Product = () => {
       <Icons
         initial={'offscreen'}
         whileInView={'onscreen'}
-        transition={{ staggerChildren: 0.5, delayChildren: 0.7 }}
+        transition={{ staggerChildren: 0.5, delayChildren: 0.6 }}
         viewport={{ once: true, amount: 1 }}
       >
         <IconCard variants={textAnimate}>
@@ -158,7 +158,7 @@ const IconCardTexts = styled.div`
 const GrLinkNextIcon = styled.div<{ marginLeft?: string }>`
   margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : '0px')};
   margin: 3rem;
-  color: #606060;
+  color: #000000;
   font-size: 3rem;
   cursor: pointer;
   @media screen and (max-width: 1280px) {

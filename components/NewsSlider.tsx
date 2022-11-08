@@ -7,6 +7,7 @@ import news1 from '../public/images/new_1.png'
 import news2 from '../public/images/new_2.png'
 import news3 from '../public/images/new_3.png'
 import news4 from '../public/images/new_4.png'
+import Arrow, { Direction } from './Arrow'
 
 const NEWS_DATA = [
   {
@@ -51,6 +52,8 @@ const NewsSlider = () => {
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: '10px',
+    nextArrow: <Arrow direction={Direction.Left} />,
+    prevArrow: <Arrow direction={Direction.Right} />,
     responsive: [
       {
         breakpoint: 460,

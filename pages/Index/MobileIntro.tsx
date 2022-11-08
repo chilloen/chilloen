@@ -8,6 +8,8 @@ import cn from 'classnames'
 import { motion } from 'framer-motion'
 import { textAnimate } from 'pages'
 const Intro = () => {
+  const imagePosition = 'fixed'
+
   return (
     <>
       <Screen>
@@ -24,7 +26,7 @@ const Intro = () => {
             src={title1Pic}
             alt="Artistic Value"
             placeholder="blur"
-            layout={'fixed'}
+            layout={imagePosition}
             objectFit="cover"
             width={780}
             height={45}
@@ -43,7 +45,7 @@ const Intro = () => {
             src={title1Pic}
             alt="Artistic Value"
             placeholder="blur"
-            layout={'fixed'}
+            layout={imagePosition}
             objectFit="cover"
             width={780}
             height={45}
@@ -64,7 +66,7 @@ const Intro = () => {
             src={title2Pic}
             alt="Challenge"
             placeholder="blur"
-            layout={'fixed'}
+            layout={imagePosition}
             objectFit="cover"
             width={720}
             height={45}
@@ -82,7 +84,7 @@ const Intro = () => {
             src={title3Pic}
             alt="Experience"
             placeholder="blur"
-            layout={'fixed'}
+            layout={imagePosition}
             objectFit="cover"
             width={620}
             height={45}
