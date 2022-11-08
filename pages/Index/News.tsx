@@ -17,7 +17,7 @@ const News = () => {
         initial={'offscreen'}
         whileInView={'onscreen'}
         viewport={{ once: true, amount: 1 }}
-        transition={{ staggerChildren: 0.2, delayChildren: 1 }}
+        transition={{ staggerChildren: 0.2, delayChildren: 0.7 }}
       >
         <CategoryTitle variants={textAnimate}>News</CategoryTitle>
         <CategoryText variants={textAnimate}>칠로엔은 행동합니다</CategoryText>

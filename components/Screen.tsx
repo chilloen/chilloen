@@ -34,7 +34,6 @@ const ScreenStyle = styled.section<{ styleProps?: ScreenStyleType }>`
   justify-content: center;
   align-items: center;
   transition: all 0.5s;
-  //justify-content: flex-start;
   > div {
     flex: 1;
     display: flex;

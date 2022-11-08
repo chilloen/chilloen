@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect, useLayoutEffect, useState } from 'react'
 import styled from 'styled-components'
 import Intro from 'pages/Index/Intro'
 import AboutUs from 'pages/Index/About'
@@ -14,7 +14,10 @@ import MobileIntro from './Index/MobileIntro'
 const Home: NextPage = () => {
   const [windowWidth, setWindowWidth] = useState(0)
 
-  useEffect(() => {
+  const useIsomorphicLayoutEffect =
+    typeof window !== 'undefined' ? useLayoutEffect : useEffect
+
+  useIsomorphicLayoutEffect(() => {
     setWindowWidth(window.innerWidth)
   }, [])
 

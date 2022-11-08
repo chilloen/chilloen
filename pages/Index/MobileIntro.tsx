@@ -162,11 +162,6 @@ const CraveContainer = styled(motion.div)`
   }
 `
 
-const FirstPagseContainer = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`
 const FirstPageContainer = styled(motion.div)`
   display: flex;
   width: 100%;
