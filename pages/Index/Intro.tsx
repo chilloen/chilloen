@@ -172,12 +172,19 @@ const CraveContainer = styled(motion.div)`
     font-weight: 700;
     line-height: 100%;
     font-size: 5rem;
+    @media screen and (max-width: 720px) {
+      font-size: 4.5rem;
+    }
     @media screen and (max-width: 540px) {
       font-size: 4rem;
     }
     @media screen and (max-width: 480px) {
       font-size: 3rem;
     }
+  }
+
+  @media screen and (max-width: 720px) {
+    margin-top: 2rem;
   }
 `
 
@@ -195,21 +202,23 @@ const TitleRow = styled.div<{ direction?: string }>`
     font-weight: 700;
   }
   .artistic-value {
-    margin-right: 0.7rem;
+    margin-right: 3rem;
     font-size: 3.75rem;
     line-height: 72px;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 720px) {
       line-height: 48px;
+      margin-right: 1rem;
     }
   }
 
   .challenge {
-    margin-left: 0.7rem;
+    margin-left: 3rem;
     font-size: 5rem;
     line-height: 95px;
     text-align: right;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 720px) {
       line-height: 57px;
+      margin-left: 1rem;
     }
   }
 
@@ -217,8 +226,9 @@ const TitleRow = styled.div<{ direction?: string }>`
     margin-right: 3rem;
     font-size: 6.25rem;
     line-height: 119px;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 720px) {
       line-height: 67px;
+      margin-right: 1rem;
     }
   }
 
