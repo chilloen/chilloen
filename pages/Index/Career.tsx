@@ -2,15 +2,13 @@ import styled from 'styled-components'
 import CareerImg from '../../public/images/job_bg.png'
 import Image from 'next/image'
 import { SlArrowRightCircle } from 'react-icons/sl'
-import { motion, useScroll, useSpring } from 'framer-motion'
+import { motion, useScroll } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { block } from 'styles/container'
-import useView from 'hooks/useView'
 
 const Career = () => {
   const careerScreenRef = useRef(null)
   const screenRef = useRef(null)
-  const [target, view] = useView(screenRef)
   const { scrollYProgress } = useScroll({
     target: careerScreenRef,
     offset: ['end end', 'start start'],
@@ -22,6 +20,7 @@ const Career = () => {
       setViewportWidth(latest * 100)
     })
   }, [])
+
   return (
     <Container ref={careerScreenRef}>
       <LeftBlock containerWidth={viewportWidth > 50 ? 50 : viewportWidth} />
