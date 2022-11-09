@@ -10,7 +10,8 @@ export const GlobalStyles = createGlobalStyle`
       font-display: fallback;
       -ms-overflow-style: none;
       scrollbar-width: none;
-       @media ${({ theme }) => theme.device.tabletL}  {
+
+      @media ${({ theme }) => theme.device.tabletL}  {
         font-size: 14px;
       }
 

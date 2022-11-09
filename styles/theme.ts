@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components'
+
 export const calcRem = (size: number) => `${size / 16}rem`
 
 export const customMediaQuery = (maxWidth: number): string =>
@@ -92,16 +94,26 @@ const device = {
   tabletL: customMediaQuery(deviceSizes.tabletL),
 }
 
-const theme = {
+export type FontSizesType = typeof fontSizes
+export type PaddingType = typeof paddings
+export type MarginType = typeof margins
+export type IntervalType = typeof interval
+export type VerticalIntervalType = typeof verticalInterval
+export type MIXINSType = typeof MIXINS
+export type ColorsType = typeof colors
+export type DeviceSizesType = typeof deviceSizes
+export type DeviceType = typeof device
+
+const theme: DefaultTheme = {
   fontSizes,
   colors,
   deviceSizes,
   device,
   paddings,
   margins,
+  MIXINS,
   interval,
   verticalInterval,
-  MIXINS,
 }
 
 export default theme
