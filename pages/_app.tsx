@@ -15,9 +15,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta name="description" content="예술에 가치를 더합니다." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="chilloen" />
-        <meta
-          name="naver-site-verification"
-          content="fe14618c575d76620332f7b393dadeab47aa4ffd"
+        <meta 
+          name="naver-site-verification" 
+          content="85ae5d6b1be23caee1846b7e6aac93294132cd73" 
         />
         <meta
           name="google-site-verification"
