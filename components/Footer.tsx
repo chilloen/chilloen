@@ -91,7 +91,7 @@ const FooterTexts = styled.div`
     position: absolute;
     right: 0;
   }
-  @media screen and (max-width: 1080px) {
+  @media ${({ theme }) => theme.device.tabletM} {
     display: flex;
     flex-direction: column;
     margin-top: 0rem;
@@ -106,7 +106,7 @@ const FooterTexts = styled.div`
 const LogoImage = styled.div`
   margin-right: 18px;
 
-  @media screen and (max-width: 1080px) {
+  @media ${({ theme }) => theme.device.tabletM} {
     padding: 1rem 0px;
   }
 `
@@ -122,7 +122,7 @@ const Bar = styled.span`
   line-height: 10px;
   margin: 0px 6px;
   vertical-align: baseline;
-  @media screen and (max-width: 1080px) {
+  @media ${({ theme }) => theme.device.tabletM} {
     display: none;
   }
 `

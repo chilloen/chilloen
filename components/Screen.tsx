@@ -29,10 +29,7 @@ const ScreenStyle = styled.section<{ styleProps?: ScreenStyleType }>`
   min-width: 100vw;
   padding: 10vh 2rem;
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${({ theme }) => theme.MIXINS.flexBox('column')};
   transition: all 0.5s;
   > div {
     flex: 1;
@@ -45,7 +42,7 @@ const ScreenStyle = styled.section<{ styleProps?: ScreenStyleType }>`
     @media screen and (min-width: 1280px) {
       width: 1200px;
     }
-    @media screen and (max-width: 1280px) {
+    @media ${({ theme }) => theme.device.tabletL} {
       width: 100%;
       flex-direction: column;
     }

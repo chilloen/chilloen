@@ -97,20 +97,20 @@ export default ContactUs
 
 const ImagesWarpper = styled(motion.div)`
   display: flex;
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     flex-direction: column;
   }
 `
 
 const ImageWarpper = styled(motion.div)`
   display: flex;
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     flex-direction: column;
   }
 `
 const ContactUsCardContainer = styled(motion.div)`
   display: flex;
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     flex-direction: column;
   }
 `
@@ -126,7 +126,7 @@ const ContactUsFormWrapper = styled.div`
   height: 460px;
   border-radius: 8px;
   padding: 2rem 2rem;
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     height: 420px;
   }
 `

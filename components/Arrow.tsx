@@ -30,10 +30,11 @@ const GrLinkNextIcon = styled.div<{ margin: number }>`
   align-items: center;
   margin: ${({ margin }) => margin + 'rem'};
   font-size: 3rem;
-  @media screen and (max-width: 1280px) {
+
+  @media ${({ theme }) => theme.device.tabletL} {
     margin: calc(margin - 1rem);
   }
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     margin: calc(margin - 2rem);
   }
 `

@@ -61,7 +61,7 @@ const Container = styled.div<{ scrollY: number }>`
     rgb(0 0 0 / ${(props) => (props.scrollY > 25 ? '7%' : '0%')});
   padding: 10px 0;
   transition: all 0.5s;
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     padding: 10px 1rem;
   }
 `
@@ -71,10 +71,10 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 1200px;
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     padding: 10px 1rem;
   }
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     width: 100%;
   }
 `
@@ -102,7 +102,7 @@ const ContactButton = styled.button<{ scrollY: number }>`
   font-weight: 400;
   font-size: 1rem;
   line-height: 19px;
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     display: none;
   }
 `

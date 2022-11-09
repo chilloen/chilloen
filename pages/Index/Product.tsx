@@ -108,7 +108,7 @@ const Icons = styled(motion.div)`
 
   padding: ${({ theme }) => theme.paddings.xxxl} 0px;
   margin: ${({ theme }) => theme.margins.xxxl} 0px;
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     flex-direction: column;
     align-items: center;
   }
@@ -119,17 +119,17 @@ const IconCard = styled(motion.div)`
   display: flex;
   align-items: center;
   margin: 0 100px;
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     margin: 2rem 0;
   }
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     width: 320px;
   }
 `
 const ImgWrapper = styled.div`
   min-width: 124px;
   min-height: 124px;
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     max-width: 62px;
     max-height: 62px;
     min-width: 0px;
@@ -150,7 +150,7 @@ const IconCardTexts = styled.div`
     font-size: 2rem;
     line-height: 41px;
   }
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     min-width: 210px;
   }
 `
@@ -161,10 +161,10 @@ const GrLinkNextIcon = styled.div<{ marginLeft?: string }>`
   color: #000000;
   font-size: 3rem;
   cursor: pointer;
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     margin: 2.5rem;
   }
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     margin: 1rem;
   }
 `

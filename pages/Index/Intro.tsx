@@ -1,4 +1,3 @@
-import Screen from 'components/Screen'
 import styled from 'styled-components'
 import Image from 'next/image'
 import title1Pic from '../../public/images/title_1.png'
@@ -119,15 +118,11 @@ export default Intro
 const Sticky = styled(motion.div)``
 
 const StickyContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${({ theme }) => theme.MIXINS.flexBox('column')};
   min-height: 100vh;
   min-width: 100vw;
   padding: 10vh 2rem;
   flex: 1;
-  transition: all 0.5s;
   background-color: ${({ theme }) => theme.colors.black};
 `
 
@@ -140,7 +135,7 @@ const StickyWrapper = styled.div`
   flex: 1;
   color: ${({ theme }) => theme.colors.white500};
 
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     width: 100%;
     flex-direction: column;
   }
@@ -172,23 +167,23 @@ const CraveContainer = styled(motion.div)`
     font-weight: 700;
     line-height: 100%;
     font-size: 5rem;
-    @media screen and (max-width: 720px) {
+
+    @media ${({ theme }) => theme.device.mobileL} {
       font-size: 4.5rem;
     }
     @media screen and (max-width: 540px) {
       font-size: 4rem;
     }
-    @media screen and (max-width: 480px) {
+    @media ${({ theme }) => theme.device.mobileM} {
       font-size: 3rem;
     }
   }
 
-  @media screen and (max-width: 720px) {
+  @media ${({ theme }) => theme.device.mobileL} {
     margin-top: 2rem;
   }
 `
 
-// row-reverse;
 const TitleRow = styled.div<{ direction?: string }>`
   display: flex;
   flex-direction: ${({ direction }) => direction || 'row'};
@@ -205,7 +200,7 @@ const TitleRow = styled.div<{ direction?: string }>`
     margin-right: 3rem;
     font-size: 3.75rem;
     line-height: 72px;
-    @media screen and (max-width: 720px) {
+    @media ${({ theme }) => theme.device.mobileL} {
       line-height: 48px;
       margin-right: 1rem;
     }
@@ -216,7 +211,7 @@ const TitleRow = styled.div<{ direction?: string }>`
     font-size: 5rem;
     line-height: 95px;
     text-align: right;
-    @media screen and (max-width: 720px) {
+    @media ${({ theme }) => theme.device.mobileL} {
       line-height: 57px;
       margin-left: 1rem;
     }
@@ -226,13 +221,13 @@ const TitleRow = styled.div<{ direction?: string }>`
     margin-right: 3rem;
     font-size: 6.25rem;
     line-height: 119px;
-    @media screen and (max-width: 720px) {
+    @media ${({ theme }) => theme.device.mobileL} {
       line-height: 67px;
       margin-right: 1rem;
     }
   }
 
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     span {
       font-size: 3.75rem !important;
     }

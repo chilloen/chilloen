@@ -96,11 +96,11 @@ export const SubTexts = styled(motion.p)<{ marginTop?: number }>`
   line-height: 30px;
   text-align: center;
 
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     font-size: ${({ theme }) => theme.fontSizes.lg};
     line-height: 20px;
   }
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     font-size: ${({ theme }) => theme.fontSizes.lg};
     line-height: 20px;
   }

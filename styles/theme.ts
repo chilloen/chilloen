@@ -1,5 +1,8 @@
 export const calcRem = (size: number) => `${size / 16}rem`
 
+export const customMediaQuery = (maxWidth: number): string =>
+  `screen and (max-width: ${maxWidth}px)`
+
 const fontSizes = {
   small: calcRem(14),
   base: calcRem(16),
@@ -39,12 +42,26 @@ const verticalInterval = {
   base: `${calcRem(10)} 0 ${calcRem(10)} 0`,
 }
 
-const deviceSizes = {
-  mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '450px',
-  tablet: '768px',
-  tabletL: '1024px',
+const MIXINS = {
+  // flex
+  flexBox: (direction = 'row', align = 'center', justify = 'center') => `
+    display: flex;
+    flex-direction: ${direction};
+    align-items: ${align};
+    justify-content: ${justify};
+  `,
+
+  // positions
+  positionCenter: (type = 'absolute') => {
+    if (type === 'absolute' || type === 'fixed')
+      return `
+        position: ${type};
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      `
+    return
+  },
 }
 
 const colors = {
@@ -58,12 +75,21 @@ const colors = {
   sub_title: '#344971',
 }
 
+const deviceSizes = {
+  mobileS: 320,
+  mobileM: 480,
+  mobileL: 720,
+  tabletS: 860,
+  tabletM: 1080,
+  tabletL: 1280,
+}
 const device = {
-  mobileS: `only screen and (max-width: ${deviceSizes.mobileS})`,
-  mobileM: `only screen and (max-width: ${deviceSizes.mobileM})`,
-  mobileL: `only screen and (max-width: ${deviceSizes.mobileL})`,
-  tablet: `only screen and (max-width: ${deviceSizes.tablet})`,
-  tabletL: `only screen and (max-width: ${deviceSizes.tabletL})`,
+  mobileS: customMediaQuery(deviceSizes.mobileS),
+  mobileM: customMediaQuery(deviceSizes.mobileM),
+  mobileL: customMediaQuery(deviceSizes.mobileL),
+  tabletS: customMediaQuery(deviceSizes.tabletS),
+  tabletM: customMediaQuery(deviceSizes.tabletM),
+  tabletL: customMediaQuery(deviceSizes.tabletL),
 }
 
 const theme = {
@@ -75,6 +101,7 @@ const theme = {
   margins,
   interval,
   verticalInterval,
+  MIXINS,
 }
 
 export default theme

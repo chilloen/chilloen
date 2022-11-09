@@ -25,13 +25,11 @@ const Career = () => {
   return (
     <Container ref={careerScreenRef}>
       <LeftBlock containerWidth={viewportWidth > 50 ? 50 : viewportWidth} />
-      <Image src={CareerImg} />
+      <Image src={CareerImg} alt="Career Image" />
       <Texts ref={screenRef}>
         <h1>새로운 도전을,</h1>
         <h1>칠로엔과 함께 하고 싶지 않으신가요?</h1>
-        {view.width > 460 && (
-          <p>새로운 예술을, 위대한 창조를, 삶을 표현할 꿈을 펼쳐주세요</p>
-        )}
+        <p>새로운 예술을, 위대한 창조를, 삶을 표현할 꿈을 펼쳐주세요</p>
 
         <GrLinkNextIcon
           onClick={() => window.open('https://chilloen.oopy.io/')}
@@ -71,35 +69,28 @@ const Container = styled(motion.div)`
   height: 540px;
   overflow: hidden;
 
-  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.tabletL}) {
-    height: 100%;
-  }
-
   span {
-    filter: blur(2px);
+    filter: blur(1px);
   }
 `
 const Texts = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  ${({ theme }) => theme.MIXINS.flexBox('column')};
+  color: ${({ theme }) => theme.colors.white500};
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -40%);
-  color: ${({ theme }) => theme.colors.white500};
   transition: all 0.5s;
+
   h1 {
     font-size: ${({ theme }) => theme.fontSizes.titleSize};
-    transition: all 0.5s;
   }
   p {
     margin-top: 1rem;
     font-size: ${({ theme }) => theme.fontSizes.xxl};
-    transition: all 0.5s;
   }
-  @media screen and (max-width: 480px) {
+
+  @media ${({ theme }) => theme.device.mobileM} {
     transform: translate(-50%, -50%);
     h1 {
       font-size: 2rem;
@@ -117,10 +108,10 @@ const GrLinkNextIcon = styled.div<{ marginLeft?: string }>`
   color: #fff;
   font-size: 3rem;
   cursor: pointer;
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     margin: 2.5rem;
   }
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     margin: 1.5rem;
   }
   cursor: pointer;

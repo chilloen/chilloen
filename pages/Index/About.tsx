@@ -30,28 +30,22 @@ const AboutUs = () => {
       styleProps={{ bg: '#F6F6F6', justifyContent: 'flex-start' }}
       id="about-us"
     >
-      <CategoryTitle
-        variants={textAnimate}
+      <motion.div
         initial={'offscreen'}
         whileInView={'onscreen'}
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: 'all' }}
+        transition={{ staggerChildren: 0.4 }}
       >
-        About Us
-      </CategoryTitle>
-      <CategoryText
-        variants={textAnimate}
-        initial={'offscreen'}
-        whileInView={'onscreen'}
-        viewport={{ once: true, amount: 0.8 }}
-      >
-        칠로엔은 생각합니다
-      </CategoryText>
+        <CategoryTitle variants={textAnimate}>About Us</CategoryTitle>
+        <CategoryText variants={textAnimate}>칠로엔은 생각합니다</CategoryText>
+      </motion.div>
+
       <Category
         flexDirection={'column'}
         initial={'offscreen'}
         whileInView={'onscreen'}
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.5 }}
+        viewport={{ once: true, amount: 'all' }}
+        transition={{ staggerChildren: 0.7 }}
       >
         <ImgWrapper variants={imageAnimate}>
           <Image src={AboutUs1} alt="AboutUs1" width={560} height={280} />
@@ -94,7 +88,7 @@ const Category = styled(motion.div)<{ flexDirection: string }>`
   width: 100%;
   color: black;
 
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     width: auto;
     flex-direction: ${({ flexDirection }) => flexDirection};
     margin-top: 30px;
@@ -102,7 +96,7 @@ const Category = styled(motion.div)<{ flexDirection: string }>`
       flex-direction: column-reverse !important;
     }
   }
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     width: 100%;
   }
   .active {
@@ -115,13 +109,13 @@ const Article = styled(motion.article)<{ mobileAlign: string }>`
   font-size: 1.5rem;
   width: 560px;
   text-align: start;
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     width: 100%;
     padding: 10px 1.5rem;
     margin: 1rem 0;
     text-align: ${({ mobileAlign }) => mobileAlign};
   }
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     font-size: 1.2rem;
     padding: 10px 1rem;
     text-align: ${({ mobileAlign }) => mobileAlign};
@@ -131,6 +125,7 @@ const Article = styled(motion.article)<{ mobileAlign: string }>`
     padding: 10px 0.8rem;
   }
 `
+
 const ImgWrapper = styled(motion.div)`
   border-radius: 8px;
   overflow: hidden;
@@ -140,7 +135,7 @@ const ImgWrapper = styled(motion.div)`
     height: 100%;
     overflow: hidden;
   }
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     width: 100%;
     overflow: hidden;
   }

@@ -4,10 +4,7 @@ export const defaultContainer = css`
   min-height: 100vh;
   min-width: 100vw;
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${({ theme }) => theme.MIXINS.flexBox('column')};
   border: 1px solid red;
   > * {
     border: 1px solid blue;
@@ -46,10 +43,10 @@ export const block = css`
   height: 560px;
   background-color: #f6f6f6;
 
-  @media screen and (max-width: 1280px) {
+  @media ${({ theme }) => theme.device.tabletL} {
     width: 20vw;
   }
-  @media screen and (max-width: 480px) {
-    width: 0vw;
+  @media ${({ theme }) => theme.device.tabletS} {
+    display: none;
   }
 `

@@ -141,7 +141,7 @@ const Intro = () => {
 export default Intro
 
 const ImageStyle = styled(Image)`
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     margin: 0 0.7rem;
     width: 340px;
     min-height: 37px;
@@ -156,7 +156,7 @@ const CraveContainer = styled(motion.div)`
     @media screen and (max-width: 540px) {
       font-size: 4rem;
     }
-    @media screen and (max-width: 480px) {
+    @media ${({ theme }) => theme.device.mobileM} {
       font-size: 3rem;
     }
   }
@@ -176,7 +176,7 @@ const FirstPageContainer = styled(motion.div)`
     font-weight: 700;
     font-size: 3.75rem;
     line-height: 72px;
-    @media screen and (max-width: 480px) {
+    @media ${({ theme }) => theme.device.mobileM} {
       line-height: 48px;
     }
   }
@@ -187,7 +187,7 @@ const FirstPageContainer = styled(motion.div)`
     font-size: 5rem;
     line-height: 95px;
     text-align: right;
-    @media screen and (max-width: 480px) {
+    @media ${({ theme }) => theme.device.mobileM} {
       line-height: 57px;
       margin-left: 0;
       margin-right: 0.7rem;
@@ -199,7 +199,7 @@ const FirstPageContainer = styled(motion.div)`
     font-weight: 700;
     font-size: 6.25rem;
     line-height: 119px;
-    @media screen and (max-width: 480px) {
+    @media ${({ theme }) => theme.device.mobileM} {
       line-height: 67px;
       margin-left: 0.7rem;
       margin-right: 0;
@@ -210,11 +210,11 @@ const FirstPageContainer = styled(motion.div)`
     font-weight: 700;
     font-size: 3.75rem;
     line-height: 72px;
-    @media screen and (max-width: 480px) {
+    @media ${({ theme }) => theme.device.mobileM} {
       line-height: 48px;
     }
   }
-  @media screen and (max-width: 480px) {
+  @media ${({ theme }) => theme.device.mobileM} {
     span {
       font-size: 3.75rem !important;
     }
