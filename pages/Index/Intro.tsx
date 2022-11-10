@@ -128,13 +128,12 @@ const StickyContainer = styled.div`
 
 const StickyWrapper = styled.div`
   display: flex;
-  overflow: hidden;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
   width: 1200px;
   flex: 1;
   color: ${({ theme }) => theme.colors.white500};
-
   @media ${({ theme }) => theme.device.tabletL} {
     width: 100%;
     flex-direction: column;

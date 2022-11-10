@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Fragment, useEffect, useLayoutEffect, useState } from 'react'
+import { Fragment } from 'react'
 import styled from 'styled-components'
 import Intro from 'pages/Index/Intro'
 import AboutUs from 'pages/Index/About'
@@ -10,21 +10,12 @@ import ContactUs from 'pages/Index/Contact'
 import { calcRem } from 'styles/theme'
 import { motion } from 'framer-motion'
 import MobileIntro from './Index/MobileIntro'
+import { isMobile } from 'react-device-detect'
 
 const Home: NextPage = () => {
-  const [windowWidth, setWindowWidth] = useState(0)
-
-  const useIsomorphicLayoutEffect =
-    typeof window !== 'undefined' ? useLayoutEffect : useEffect
-
-  useIsomorphicLayoutEffect(() => {
-    setWindowWidth(window.innerWidth)
-  }, [])
-
-  console.log(windowWidth)
   return (
     <Fragment>
-      {windowWidth > 480 ? <Intro /> : <MobileIntro />}
+      {!isMobile ? <Intro /> : <MobileIntro />}
       <AboutUs />
       <Product />
       <News />
