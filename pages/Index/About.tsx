@@ -51,7 +51,8 @@ const AboutUs = () => {
           <Image src={AboutUs1} alt="AboutUs1" width={560} height={280} />
         </ImgWrapper>
         <Article mobileAlign={'start'} variants={textAnimate}>
-          <p>예술이란 누군가의 삶을 표현한 꿈입니다.</p>
+          <h1>예술이란 누군가의 삶을 표현한 꿈입니다.</h1>
+          <br></br>
           <p>그 꿈은 우리 주변을 맴돌고, 다른 이의 삶에</p>
           <p>다른 꿈을 심어주기도 합니다.</p>
         </Article>
@@ -64,11 +65,11 @@ const AboutUs = () => {
         transition={{ staggerChildren: 0.5, staggerDirection: -1 }}
       >
         <Article mobileAlign={'end'} variants={textAnimate}>
-          <p>수많은 예술가들이 꿈을 꾸고, 쫓고 또 동경합니다.</p>
+          <p>수많은 예술가들이 꿈을 꾸고, 쫓고 또 동경합니다</p>
           <p>다만, 그들의 위대한 창조물들이 우리 주변에서</p>
           <p>빛을 보기까지는 수많은 노력이 필요합니다.</p>
           <br></br>
-          <p>칠로엔은 그들을 위한 서비스를 창조합니다.</p>
+          <h1>칠로엔은 그들을 위한 서비스를 창조합니다.</h1>
         </Article>
         <ImgWrapper variants={imageAnimate}>
           <Image src={AboutUs2} alt="AboutUs2" width={560} height={280} />
@@ -109,6 +110,11 @@ const Article = styled(motion.article)<{ mobileAlign: string }>`
   font-size: 1.5rem;
   width: 560px;
   text-align: start;
+  /* p {
+    font-size: 1rem;
+    line-height: 27px;
+    word-break: break-word;
+  } */
   @media ${({ theme }) => theme.device.tabletL} {
     width: 100%;
     padding: 10px 1.5rem;
@@ -116,6 +122,9 @@ const Article = styled(motion.article)<{ mobileAlign: string }>`
     text-align: ${({ mobileAlign }) => mobileAlign};
   }
   @media ${({ theme }) => theme.device.mobileM} {
+    h1 {
+      font-size: 1.5rem;
+    }
     font-size: 1.2rem;
     padding: 10px 1rem;
     text-align: ${({ mobileAlign }) => mobileAlign};
