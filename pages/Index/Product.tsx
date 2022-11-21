@@ -73,9 +73,9 @@ const Product = () => {
             <p>또 다른 예술 세계</p>
             <h2>ODDYARD</h2>
           </IconCardTexts>
-          <GrLinkNextIcon marginLeft="62px">
+          {/* <GrLinkNextIcon marginLeft="62px">
             <SlArrowRightCircle />
-          </GrLinkNextIcon>
+          </GrLinkNextIcon> */}
         </IconCard>
         <IconCard variants={textAnimate}>
           <ImgWrapper>
@@ -91,7 +91,10 @@ const Product = () => {
             <p>무한한 가치의 인공지능 음악 파트너</p>
             <h2>KEENEAT</h2>
           </IconCardTexts>
-          <GrLinkNextIcon marginLeft="62px">
+          <GrLinkNextIcon
+            marginLeft="62px"
+            onClick={() => window.open('https://www.keeneat.com')}
+          >
             <SlArrowRightCircle />
           </GrLinkNextIcon>
         </IconCard>
